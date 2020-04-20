@@ -13,7 +13,7 @@
 //ToDo: Inside mutations object create a vuex method called 'SELL_STOCK' that takes four parameters (state, {stockId, quantity, stockPrice}
 //ToDo: Create const called record that is equal to state.stocks.find(element => element.id == stockId)
 //ToDo: If (record.quantity > quantity) then set record.quantity -= quantity
-//ToDo: Else set state.stocks.splice(state.stocks.indexOf(record, 1))
+//ToDo: Else set state.stocks.splice(state.stocks.indexOf(record), 1)
 //ToDo: Set state.funds += stockPrice * quantity
 
 //ToDo: Inside mutations object create a vuex method called 'SET_PORTFOLIO' that takes two parameters (state, portfolio}
