@@ -31,12 +31,12 @@
 //ToDo: return state.stocks.map() that is a pointer function that passes stock
 //ToDo: Create const called record that is equal to getters.stocks.find(element => element.id == stock.id)
 //ToDo: Return an object
-//ToDo: Set id to stock.id
-//ToDo: Set quantity to stock.quantity
-//ToDo: Set name to record.name
-//ToDo: Set price to record.price
+  //ToDo: Set id to stock.id
+  //ToDo: Set quantity to stock.quantity
+  //ToDo: Set name to record.name
+  //ToDo: Set price to record.price
 //ToDo: Create funds method that passes state
-//ToDo: Return state.funds
+  //ToDo: Return state.funds
 
 export default {
   //ToDo: Export the const state, mutations, actions, and getters
