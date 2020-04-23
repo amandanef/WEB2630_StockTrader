@@ -9,7 +9,7 @@ import stocks from '../../data/stocks';
 //ToDo: Inside 'SET_STOCKS' set state.stocks equal to stocks
 
 //ToDo: Inside mutations object create a vuex method called 'RND_STOCKS' that takes one parameter (state)
-//ToDo: Inside 'RND_STOCKS' your will create a state.stocks.forEach that is a point function that passes stock
+//ToDo: Inside 'RND_STOCKS' you will create a state.stocks.forEach that is a pointer (arrow) function that passes stock as a parameter
 //ToDo: Set stock.price equal to Math.round() passing stock.price * (1 + Math.random() - 0.5)
 
 
