@@ -5,9 +5,9 @@ export const loadData = ({ commit }) => {
     .then(response => response.json())
     .then(data => {
       if (data) {
-        // ToDo: Create const call stocks that is equal to data.stocks
-        // ToDo: Create const call funds that is equal to data.funds
-        // ToDo: Create const call stockPortfolio that is equal to data.stockPortfolio
+        // ToDo: Create const called stocks that is equal to data.stocks
+        // ToDo: Create const called funds that is equal to data.funds
+        // ToDo: Create const called stockPortfolio that is equal to data.stockPortfolio
 
         //ToDo: Create a const called portfolio that is a data object {}
         //ToDo: Inside portfolio add stockPortfolio and funds
