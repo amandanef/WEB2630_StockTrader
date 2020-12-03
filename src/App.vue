@@ -30,7 +30,7 @@ body {
 }
 
 /*ToDo: Create slide-in effect for enter-active*/
-/*ToDo: Create slide-in effect for leave-active*/
+/*ToDo: Create slide-out effect for leave-active*/
 
 /*ToDo: Create Keyframes for slide-in, remember to include from and to*/
 /*You can use any settings*/
