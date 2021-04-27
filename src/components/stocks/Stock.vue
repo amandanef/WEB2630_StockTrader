@@ -18,9 +18,9 @@
           >
         </div>
         <div class="pull-right">
-          <!--ToDo: Inside the button add a click event that calls buyStock-->
+          <!--Inside the button add a click event that calls buyStock-->
           <!--ToDo: Bind to disabled using : and set it equal to insufficientFunds || quantity is less than or equal to 0 || !Number.isInteger(quantity)-->
-          <button class="btn btn-success">
+          <button @click="buyStock" class="btn btn-success">
             <!--ToDo: Display insufficientFunds data object and add if using ? 'Not Enough' else 'Buy'-->
           </button>
         </div>
@@ -41,15 +41,21 @@ export default {
 
   data () {
     return {
-      //ToDo: Create data object called quantity and set it to 0
+      //Create data object called quantity and set it to 0
+      quantity = 0,
     }
   },
   computed: {
-    //ToDo: Create a computed function called funds
-    //ToDo: Have funds() return $store.getters.funds
-
-    //ToDo: Create a computed function called insufficientFunds
-    //ToDo: Have insufficientFunds() return this.quantity * this.stock.price > this.funds
+    //Create a computed function called funds
+    //Have funds() return $store.getters.funds
+    funds() {
+      return $store.getters.funds
+    },
+    //Create a computed function called insufficientFunds
+    //Have insufficientFunds() return this.quantity * this.stock.price > this.funds
+    insufficientFunds () {
+      return this.quantity * this.stock.price > this.funds
+    }
   },
   methods: {
     //ToDo: Create buyStock method
