@@ -19,7 +19,8 @@
               </li>
         </ul>
         <strong class="navbar-text navbar-right">Funds:
-          <!--ToDo: Call funds computed function and pipe the currency filter that is created in main.js-->
+          <!--Call funds computed function and pipe the currency filter that is created in main.js-->
+          {{ funds | currency}}
         </strong>
         <ul class="nav navbar-nav navbar-right">
           <li>
@@ -27,8 +28,8 @@
             <a href="#" @click="endDay">End Day</a>
           </li>
 
-          <!--ToDo: Inside <li> Bind to class using :class that passes an object {} called open and set it to isDropdownOpen-->
-          <!--ToDo: Add click event that toggles isDropdownOpen to true and false-->
+          <!--Inside <li> Bind to class using :class that passes an object {} called open and set it to isDropdownOpen-->
+          <!--Add click event that toggles isDropdownOpen to true and false-->
           <li class="dropdown">
             <a
               href="#"
@@ -37,6 +38,7 @@
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
+              :class="{ open: isDropDownOpen }"
               @click="isDropdownOpen = !isDropdownOpen"
             >Save & Load <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -53,13 +55,14 @@
 </template>
 
 <script>
-//ToDo: Import mapActions from vuex
+//Import mapActions from vuex
+import mapActions from 'vuex'
 
 export default {
   data () {
     return {
       //Create data object called isDropdownOpen and set it to false
-      isDropdownOpen = false,
+      isDropdownOpen: false,
     }
   },
   computed: {
@@ -70,25 +73,40 @@ export default {
     }
   },
   methods: {
-    //ToDo: Create ...mapActions method
-    //ToDo: Call randomizeStocks: 'randomizeStocks'
-    //ToDo: Call fetchData: 'loadData'
+    //Create ...mapActions method
+    //Call randomizeStocks: 'randomizeStocks'
+    //Call fetchData: 'loadData'
+    ...mapActions ({
+      randomizeStocks: 'randomizeStocks',
+      fetchData: 'loadData'
+    }),
 
-    //ToDo: Create endDay method
-    //ToDo: Call randomizeStocks()
+    //Create endDay method
+    //Call randomizeStocks()
     endDay(){
       return randomizeStocks()
-    }
+    },
 
-    //ToDo: Create SaveData method
-    //ToDo: Create const called data that holds an object
-    //ToDo: Set funds: to the $store getters funds
-    //ToDo: Set stockPortfolio: to the $store getters stockPortfolio
-    //ToDo: Set stocks: to the $store getters stocks
+    //Create SaveData method
+    //Create const called data that holds an object
+    //Set funds: to the $store getters funds
+    //Set stockPortfolio: to the $store getters stockPortfolio
+    //Set stocks: to the $store getters stocks
     //ToDo: Outside the data object use $http, using .put pass 'data.json' and the data object
+    saveData(){
+      const data = {
+        funds: $store.getters.funds,
+        stockPortfolio: $store.getters.stockPortfolio,
+        stocks: $store.getters.stocks
+      }
+      $http.put('data.json', data)
+    },
 
-    //ToDo: Create loadData method
-    //ToDo: Call fetchData()
+    //Create loadData method
+    //Call fetchData()
+    loadData () {
+      fetchData()
+    }
   }
 }
 </script>

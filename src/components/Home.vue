@@ -6,7 +6,8 @@
     <hr>
 
     <p>Your Funds:
-      <!--ToDo: Call funds computed function and pipe the currency filter that is created in main.js-->
+      <!--Call funds computed function and pipe the currency filter that is created in main.js-->
+      {{ funds | currency }}
     </p>
   </div>
 </template>
@@ -14,8 +15,12 @@
 <script>
 export default {
   computed: {
-    //ToDo: Create a computed function called funds
-    //ToDo: Have funds() return this.$store.getters.funds
+    //Create a computed function called funds
+    //Have funds() return this.$store.getters.funds
+    funds() {
+      return this.$store.getters.funds
+    }
   }
+
 }
 </script>

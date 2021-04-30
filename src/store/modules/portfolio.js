@@ -1,7 +1,11 @@
-//ToDo: Create const called state that is a data object{}
-//ToDo: Create funds and set it to 10000
-//ToDo: Create an array called stocks and leave it empty
 
+//Create const called state that is a data object{}
+//Create funds and set it to 10000
+//Create an array called stocks and leave it empty
+const state = {
+  funds: 10000,
+  stocks: []
+}
 
 //ToDo: Create const called mutations that is a data object{}
 //ToDo: Inside mutations object create a vuex method called 'BUY_STOCK' that takes four parameters (state, {stockId, quantity, stockPrice}
@@ -9,6 +13,21 @@
 //ToDo: If (record) then set record.quantity += quantity
 //ToDo: Else push id: stockId and quantity: quantity to state.stocks
 //ToDo: Set state.funds -= stockPrice * quantity
+
+const mutations = {
+/*
+const record = state.stocks.find(element => element.id == stockId)
+if (record) {
+  record.quantity += this.quantity
+}
+else {
+  
+}
+state.funds -= stockPrice * this.quantity
+*/
+
+
+}
 
 //ToDo: Inside mutations object create a vuex method called 'SELL_STOCK' that takes four parameters (state, {stockId, quantity, stockPrice}
 //ToDo: Create const called record that is equal to state.stocks.find(element => element.id == stockId)
@@ -21,11 +40,14 @@
 //ToDo: Set state.stocks equal to portfolio.stockPortfolio if portfolio.stockPortfolio else [] (Use if else using ? and :)
 
 
-//ToDo: Create const called actions that is a data object()
-//ToDo: Create sellStock that passes ({commit}, order)
-//  ToDo: Use the commit method passing 'SELL_STOCK' and order
-
-
+//Create const called actions that is a data object()
+//Create sellStock that passes ({commit}, order)
+//Use the commit method passing 'SELL_STOCK' and order
+const actions = {
+  sellStock: ({commit}, order) => {
+    commit(types.SELL_STOCK, order)
+  }
+}
 //ToDo: Create const called getters that is a data object{}
 //ToDo: Inside getters object create stockPortfolio method that takes two parameters (state, getters)
 //ToDo: return state.stocks.map() that is a pointer function that passes stock
@@ -37,7 +59,26 @@
   //ToDo: Set price to record.price
 //ToDo: Create funds method that passes state
   //ToDo: Return state.funds
+  const getters = {
+    stockPortfolio: (state, getters) => {
+        return state.stocks.map()
+    },
+    funds(state) {
+      return state.funds
+    }
+}
+/*
+const record = getters.stocks.find(element => element.id == stock.id)
+id: stock.id,
+quantity: stock.quantity,
+name: record.name,
+*/
+
 
 export default {
-  //ToDo: Export the const state, mutations, actions, and getters
+  //Export the const state, mutations, actions, and getters
+  state,
+  getters,
+  actions,
+  mutations
 }

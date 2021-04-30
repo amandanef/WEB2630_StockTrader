@@ -8,7 +8,8 @@
           name="slide"
           mode="out-in"
         >
-          <!--ToDo: Load router-view-->
+          <!--Load router-view-->
+          <router-view></router-view>
         </transition>
       </div>
     </div>
@@ -23,8 +24,11 @@ export default {
   //Initialize Header component and name it appHeader
 components: {
   appHeader: Header,
-}
+},
   //ToDo: On page creation dispatch 'initStocks' to the vuex $store
+   data () {
+    $store.dispatch('initStocks')
+  },
 }
 </script>
 

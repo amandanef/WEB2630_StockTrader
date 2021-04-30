@@ -1,11 +1,10 @@
 <template>
   <div>
     <!--Load app-stock component-->
-    <appStock>
-
+    <appStock v-for="stock in stocks" :key="stock" :stock = "stock">
     </appStock>
-    <!--ToDo: Loop through stock in stocks using v-for-->
-    <!--ToDo: Bind to stock using : and pass stock from the v-for-->
+    <!-- Loop through stock in stocks using v-for-->
+    <!-- Bind to stock using : and pass stock from the v-for-->
   </div>
 </template>
 
